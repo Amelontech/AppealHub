@@ -1,0 +1,25 @@
+
+
+name: Deploy Netlify Site
+
+
+
+on:
+  push:
+    branches: [ master ]
+    
+  
+jobs: 
+
+  build:
+  
+    runs_on: ubuntu-latest
+    
+
+    steps:
+    
+      - uses: actions/checkout@v2
+      
+      
+      - name: Deploy Site 
+        run: curl -X POST -d {} ${{ NETLIFY_BUILD_HOOK }}
